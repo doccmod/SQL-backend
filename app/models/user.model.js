@@ -1,6 +1,6 @@
 const sql = require("./db.js");
 
-const user = function( User) {
+const user = function(User) {
     this.name = User.name;
     this.email = User.email;
     this.password = User.password;

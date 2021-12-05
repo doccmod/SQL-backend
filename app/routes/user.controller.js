@@ -9,7 +9,7 @@ exports.create = (req, res) => {
         });
     }
 
-    const user = new modelUser({
+    const user = new User({
         name: req.body.name,
         password: req.body.password,
         email: req.body.email || false
