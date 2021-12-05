@@ -10,12 +10,12 @@ exports.create = (req, res) => {
     }
 
     const user = new modelUser({
-        title: req.body.title,
-        description: req.body.description,
-        published: req.body.published || false
+        name: req.body.name,
+        password: req.body.password,
+        email: req.body.email || false
     });
 
-    user.create(User, (err, data => {
+    user.create(User, (err, data) => {
         if(err) 
             res.status(500).send({
                 message:
