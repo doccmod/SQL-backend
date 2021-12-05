@@ -1,12 +1,12 @@
 const sql = require("./db.js");
 
-const modelUser = function(User) {
+const user = function( User) {
     this.name = User.name;
     this.email = User.email;
     this.password = User.password;
 };
 
-modelUser.create = (newUser, result) => {
+user.create = (newUser, result) => {
     sql.query("INSERT INTO user", newUser, (err, res) => {
       if (err) {
         console.log("error: ", err);
