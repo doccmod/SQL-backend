@@ -15,7 +15,7 @@ exports.create = (req, res) => {
         email: req.body.email || false
     });
 
-    user.create(User, (err, data) => {
+    User.create(user, (err, data) => {
         if(err) 
             res.status(500).send({
                 message:
