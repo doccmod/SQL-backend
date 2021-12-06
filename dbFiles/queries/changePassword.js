@@ -8,7 +8,7 @@ const ChangePass = async(username, newPassword) => {
         let changePass = sql.promise().query(
         `UPDATE User
         SET password = '${newPassword}'
-        WHERE name = ${username}`);
+        WHERE name = '${username}'`);
         
         return changePass;
 

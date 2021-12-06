@@ -7,7 +7,7 @@ const PlayerLogin = async(username) => {
         let playerLogin = sql.promise().query(
         `SELECT password,
         FROM User,
-        WHERE name = ${username}`);
+        WHERE name = '${username}'`);
 
         return playerLogin;
 

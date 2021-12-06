@@ -8,7 +8,7 @@ const GetWins = async(username) => {
         let getWins = sql.promise().query(
         `SELECT pWin
         FROM Player
-        WHERE username = ${username}`);
+        WHERE username = '${username}'`);
         
         return getWins;
 
@@ -22,7 +22,7 @@ const GetLosses = async(username) => {
         let getLoss = sql.promise().query(
         `SELECT pLoss
         FROM Player
-        WHERE username = ${username}`);
+        WHERE username = '${username}'`);
 
         return getLoss;
 
@@ -31,15 +31,15 @@ const GetLosses = async(username) => {
     }
 }
 
-const GetTeamName = async() => {
-    try {
-        let getTeamName =
+// const GetTeamName = async() => {
+//     try {
+//         let getTeamName =
 
-        return getTeamName;
-    } catch {
-        console.log(error);
-    }
-}
+//         return getTeamName;
+//     } catch {
+//         console.log(error);
+//     }
+// }
 
 module.exports = {
     GetWins,

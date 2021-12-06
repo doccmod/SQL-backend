@@ -7,7 +7,7 @@ const TournamentList = async(tRegion) => {
         let tournamentList = sql.promise().query(
         `SELECT startDate,
         FROM Tournament,
-        WHERE region = ${tRegion}
+        WHERE region = '${tRegion}'
         ORDER BY startDate DESC`);
 
         return tournamentList;
