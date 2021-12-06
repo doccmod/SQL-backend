@@ -5,6 +5,7 @@ const cors = require("cors");
 // Required file dependencies
 const userOps = require("./dbFiles/tables/userOperations");
 const User = require("./dbFiles/config/user");
+const queries = require("./dbFiles/queries/ex5");
 
 // Setting up the port 3001 and creating the app
 const API_PORT = process.env.PORT || 3001;
@@ -26,11 +27,12 @@ app.get("/api", (req, res) => {
 });
 
 // Creates a test user and adds it to the database
+// Will probably just be a for loop for adding all users
 let testUser = new User('Joe', 'joe@gmail.com', 'abcd');
-userOps.createUser(testUser);
+userOps.CreateUser(testUser);
 
 // Outputs all users to the console
-userOps.getUsers().then(res =>{
+userOps.GetUsers().then(res => {
     console.log(res);
 })
 
