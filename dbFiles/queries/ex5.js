@@ -2,6 +2,7 @@
 const sql = require("../config/dbConfig.js");
 mysql = require('mysql2');
 
+//query 1
 const PreChristmasTournaments = async() => {
     try {
         let christmasTournament = sql.promise().query(`SELECT COUNT(startDate) as Started
@@ -14,6 +15,7 @@ const PreChristmasTournaments = async() => {
     }
 }
 
+//query 2
 const MostWins = async() => {
     try {
         let mostWins = sql.promise().query(`SELECT username, pWin
@@ -26,6 +28,7 @@ const MostWins = async() => {
     }
 }
 
+//query 3
 const UsersFromWinningTeam = async() => {
     try {
         let usersFromWinningTeam = sql.promise().query(`CREATE VIEW usersFromWinningTeam AS (SELECT userId
@@ -43,6 +46,27 @@ const UsersFromWinningTeam = async() => {
         console.log(error);
     }
 }
+
+
+//query 4
+const TopAgents = async() => {
+    try {
+        let topAgents = sql.promise().query(
+        `SELECT aName,aType,aWins
+        FROM Agent
+        WHERE aWins > (SELECT AVG(aWins) as avg
+        FROM Agent);`
+        );
+
+        return topAgents;
+    } catch {
+        console.log(error);
+    }
+}
+
+
+
+
 
 module.exports = {
     PreChristmasTournaments,
