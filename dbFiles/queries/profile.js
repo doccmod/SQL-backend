@@ -31,6 +31,16 @@ const GetLosses = async(username) => {
     }
 }
 
+const GetTeamName = async() => {
+    try {
+        let getTeamName =
+
+        return getTeamName;
+    } catch {
+        console.log(error);
+    }
+}
+
 module.exports = {
     GetWins,
     GetLosses,
