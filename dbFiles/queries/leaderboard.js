@@ -2,8 +2,6 @@
 const sql = require("../config/dbConfig.js");
 mysql = require('mysql2');
 
-
-//query 2
 const MostWins = async() => {
     try {
         let mostWins = sql.promise().query(`SELECT username, pWin
@@ -16,7 +14,6 @@ const MostWins = async() => {
     }
 }
 
-//query 4
 const TopAgents = async() => {
     try {
         let topAgents = sql.promise().query(

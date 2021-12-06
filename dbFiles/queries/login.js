@@ -2,9 +2,7 @@
 const sql = require("../config/dbConfig.js");
 mysql = require('mysql2');
 
-
-//query 2
-const PlayerLogin = async() => {
+const PlayerLogin = async(username) => {
     try {
         let playerLogin = sql.promise().query(
         `SELECT password,
@@ -13,15 +11,11 @@ const PlayerLogin = async() => {
         );
 
         return playerLogin;
+
     } catch {
         console.log(error);
     }
 }
-
-
-
-
-
 
 module.exports = {
     PlayerLogin
