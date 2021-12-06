@@ -2,7 +2,7 @@
 const sql = require("../config/dbConfig.js");
 mysql = require('mysql2');
 
-const ChangePass = async(user) => {
+const ChangePass = async(username) => {
     try {
 
         // 
