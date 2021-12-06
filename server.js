@@ -26,15 +26,15 @@ app.post("/api", (req, res) => {
     res.json({message: "Hello API"});
 });
 
-// Creates a test user and adds it to the database
-// Will probably just be a for loop for adding all users
-let testUser = new User('Joe', 'joe@gmail.com', 'abcd');
-userOps.CreateUser(testUser);
+// // Creates a test user and adds it to the database
+// // Will probably just be a for loop for adding all users
+// let testUser = new User('Joe', 'joe@gmail.com', 'abcd');
+// userOps.CreateUser(testUser);
 
-// Outputs all users to the console
-userOps.GetUsers().then(res => {
-    console.log(res);
-})
+// // Outputs all users to the console
+// userOps.GetUsers().then(res => {
+//     console.log(res);
+// })
 
 // Listens on port 3001
 app.listen(API_PORT, () => {

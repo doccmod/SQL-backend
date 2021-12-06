@@ -4,8 +4,9 @@
   "description": "Testing the creation of a backend for a React website using MySQL",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "front": "",
+    "server": "nodemon server.js",
+    "start": "run-p server front"
   },
   "repository": {
     "type": "git",
