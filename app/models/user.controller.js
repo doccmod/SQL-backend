@@ -12,7 +12,7 @@ exports.create = (req, res) => {
     const user = new User({
         name: req.body.name,
         password: req.body.password,
-        email: req.body.email || false
+        email: req.body.email
     });
 
     User.create(user, (err, data) => {
