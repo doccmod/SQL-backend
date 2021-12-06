@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
 // Shows hello api on 127.0.0.1:3001/api
-app.get("/api", (req, res) => {
+app.post("/api", (req, res) => {
     res.json({message: "Hello API"});
 });
 

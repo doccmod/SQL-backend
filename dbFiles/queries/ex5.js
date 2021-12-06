@@ -2,13 +2,13 @@
 const sql = require("../config/dbConfig.js");
 mysql = require('mysql2');
 
-const PreChristmasTournaments = async() => {
+const PreHolidayDate = async() => {
     try {
-        let christmasTournament = sql.promise().query(`SELECT COUNT(startDate) as Started
+        let preHolidayDate = sql.promise().query(`SELECT COUNT(startDate) as Started
         FROM Tournament
         WHERE DATE(startDate) < DATE('2021-11-25')`);
 
-        return christmasTournament;
+        return preHolidayDate;
     } catch {
         console.log(error);
     }
@@ -45,7 +45,7 @@ const UsersFromWinningTeam = async() => {
 }
 
 module.exports = {
-    PreChristmasTournaments,
+    PreHolidayDate,
     MostWins,
     UsersFromWinningTeam
 }
