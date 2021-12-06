@@ -4,7 +4,8 @@ mysql = require('mysql2');
 
 const MostWins = async() => {
     try {
-        let mostWins = sql.promise().query(`SELECT username, pWin
+        let mostWins = sql.promise().query(
+        `SELECT username, pWin
         FROM Player
         ORDER BY pWin DESC`);
 
