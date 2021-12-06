@@ -31,15 +31,19 @@ const GetLosses = async(username) => {
     }
 }
 
-// const GetTeamName = async() => {
-//     try {
-//         let getTeamName =
+const GetTeamName = async() => {
+     try {
+         let getTeamName = sql.promise().query(
+        `SELECT tName
+        FROM Team
 
-//         return getTeamName;
-//     } catch {
-//         console.log(error);
-//     }
-// }
+        WHERE 
+        `
+         return getTeamName;
+     } catch {
+         console.log(error);
+     }
+ }
 
 module.exports = {
     GetWins,
