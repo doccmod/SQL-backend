@@ -16,26 +16,6 @@ const MostWins = async() => {
     }
 }
 
-//query 3
-const UsersFromWinningTeam = async() => {
-    try {
-        let usersFromWinningTeam = sql.promise().query(`CREATE VIEW usersFromWinningTeam AS (SELECT userId
-            FROM TeamPlayers
-            WHERE teamId = (SELECT teamId
-                FROM Team
-                WHERE tName = (SELECT mWinner
-                    FROM VMatch
-                    WHERE tournamentId = 1 AND bracketLevel = (SELECT maxBracketLevel
-                        FROM Tournament
-                        WHERE TournamentId = '1')))`);
-
-        return usersFromWinningTeam;
-    } catch {
-        console.log(error);
-    }
-}
-
-
 //query 4
 const TopAgents = async() => {
     try {
@@ -52,13 +32,7 @@ const TopAgents = async() => {
     }
 }
 
-
-
-
-
 module.exports = {
     MostWins,
-    UsersFromWinningTeam,
     TopAgents
-
 }
