@@ -5,12 +5,12 @@ mysql = require('mysql2');
 const GetWins = async(username) => {
     try {
 
-        let getWins = sql.promise().query(
+        const getWins = await sql.promise().query(
         `SELECT pWin
         FROM Player
         WHERE username = '${username}'`);
         
-        return getWins;
+        return getWins[0];
 
     } catch {
         console.log(error);
@@ -19,12 +19,12 @@ const GetWins = async(username) => {
 
 const GetLosses = async(username) => {
     try {
-        let getLoss = sql.promise().query(
+        const getLoss = await sql.promise().query(
         `SELECT pLoss
         FROM Player
         WHERE username = '${username}'`);
 
-        return getLoss;
+        return getLoss[0];
 
     } catch {
         console.log(error);
@@ -33,13 +33,13 @@ const GetLosses = async(username) => {
 
 const GetTeamName = async() => {
      try {
-         let getTeamName = sql.promise().query(
+         const getTeamName = await sql.promise().query(
         `SELECT tName
         FROM Team
 
         WHERE 
         `
-         return getTeamName;
+         return getTeamName[0];
      } catch {
          console.log(error);
      }

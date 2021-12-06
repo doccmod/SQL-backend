@@ -4,13 +4,12 @@ mysql = require('mysql2');
 
 const ChangePass = async(username, newPassword) => {
     try {
-
-        let changePass = sql.promise().query(
+        const changePass = await sql.promise().query(
         `UPDATE User
         SET password = '${newPassword}'
         WHERE name = '${username}'`);
         
-        return changePass;
+        return changePass[0];
 
     } catch {
         console.log(error);

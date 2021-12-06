@@ -4,12 +4,12 @@ mysql = require('mysql2');
 
 const MostWins = async() => {
     try {
-        let mostWins = sql.promise().query(
+        const mostWins = await sql.promise().query(
         `SELECT username, pWin
         FROM Player
         ORDER BY pWin DESC`);
 
-        return mostWins;
+        return mostWins[0];
     } catch {
         console.log(error);
     }
@@ -17,14 +17,14 @@ const MostWins = async() => {
 
 const TopAgents = async() => {
     try {
-        let topAgents = sql.promise().query(
+        const topAgents = await sql.promise().query(
         `SELECT aName,aType,aWins
         FROM Agent
         WHERE aWins > (SELECT AVG(aWins) as avg
         FROM Agent);`
         );
 
-        return topAgents;
+        return topAgents[0];
     } catch {
         console.log(error);
     }
