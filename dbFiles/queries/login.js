@@ -4,13 +4,15 @@ mysql = require('mysql2');
 
 
 //query 2
-const MostWins = async() => {
+const PlayerLogin = async() => {
     try {
-        let mostWins = sql.promise().query(`SELECT username, pWin
-        FROM Player
-        ORDER BY pWin DESC`);
+        let playerLogin = sql.promise().query(
+        `SELECT password,
+        FROM User,
+        WHERE name = ${username}`
+        );
 
-        return mostWins;
+        return playerLogin;
     } catch {
         console.log(error);
     }
@@ -22,7 +24,5 @@ const MostWins = async() => {
 
 
 module.exports = {
-    PreHolidayDate,
-    MostWins,
-    UsersFromWinningTeam
+    PlayerLogin
 }
