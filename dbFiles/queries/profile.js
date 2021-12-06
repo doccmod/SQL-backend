@@ -31,22 +31,7 @@ const GetLosses = async(username) => {
     }
 }
 
-const GetTeamName = async() => {
-     try {
-         const getTeamName = await sql.promise().query(
-        `SELECT tName
-        FROM Team
-
-        WHERE 
-        `
-         return getTeamName[0];
-     } catch {
-         console.log(error);
-     }
- }
-
 module.exports = {
     GetWins,
-    GetLosses,
-    GetTeamName
+    GetLosses
 }
