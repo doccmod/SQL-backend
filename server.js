@@ -1,3 +1,5 @@
+//TODO: get rid of userOp/user.js
+
 // Required libraries
 const express = require("express");
 const cors = require("cors");

@@ -6,7 +6,7 @@ const ChangePass = async(username, newPassword) => {
     try {
         const changePass = await sql.promise().query(
         `UPDATE User
-        SET password = '${newPassword}'
+        SET password = '${newPassword}' 
         WHERE name = '${username}'`);
         
         return changePass[0];
