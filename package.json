@@ -6,7 +6,7 @@
   "scripts": {
     "front": "",
     "server": "nodemon server.js",
-    "start": "run-p server front"
+    "dev": "run-p server front"
   },
   "repository": {
     "type": "git",
