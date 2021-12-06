@@ -26,7 +26,26 @@ const MostWins = async() => {
     }
 }
 
+const UsersFromWinningTeam = async() => {
+    try {
+        let usersFromWinningTeam = sql.promise().query(`CREATE VIEW usersFromWinningTeam AS (SELECT userId
+            FROM TeamPlayers
+            WHERE teamId = (SELECT teamId
+                FROM Team
+                WHERE tName = (SELECT mWinner
+                    FROM VMatch
+                    WHERE tournamentId = 1 AND bracketLevel = (SELECT maxBracketLevel
+                        FROM Tournament
+                        WHERE TournamentId = '1')))`);
+
+        return usersFromWinningTeam;
+    } catch {
+        console.log(error);
+    }
+}
+
 module.exports = {
     PreChristmasTournaments,
-    MostWins
+    MostWins,
+    UsersFromWinningTeam
 }
