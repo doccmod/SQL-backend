@@ -28,10 +28,10 @@ app.post("/api", (req, res) => {
 
 // Creates a test user and adds it to the database
 // Will probably just be a for loop for adding all users
-let testUser = new User('Joe', 'joe@gmail.com', 'abcd');
-userOps.CreateUser(testUser);
+//let testUser = new User('Joe', 'joe@gmail.com', 'abcd');
+//userOps.CreateUser(testUser);
 
-login.PlayerLogin(Joe).then(res => {
+login.PlayerLogin("Joe").then(res => {
     console.log(res);
 });
 

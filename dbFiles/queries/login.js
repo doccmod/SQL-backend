@@ -4,12 +4,12 @@ mysql = require('mysql2');
 
 const PlayerLogin = async(username) => {
     try {
-        let playerLogin = sql.promise().query(
-        `SELECT password,
-        FROM User,
+        const playerLogin = await sql.promise().query(
+        `SELECT password
+        FROM User
         WHERE name = '${username}'`);
 
-        return playerLogin;
+        return playerLogin[0];
 
     } catch {
         console.log(error);
