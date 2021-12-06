@@ -31,7 +31,7 @@ app.post("/api", (req, res) => {
 let testUser = new User('Joe', 'joe@gmail.com', 'abcd');
 userOps.CreateUser(testUser);
 
-login.PlayerLogin(Joe).then(res => {
+login.PlayerLogin("Joe").then(res => {
     console.log(res);
 });
 

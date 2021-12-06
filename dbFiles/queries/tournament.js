@@ -5,8 +5,8 @@ mysql = require('mysql2');
 const TournamentList = async(tRegion) => {
     try {
         let tournamentList = sql.promise().query(
-        `SELECT startDate,
-        FROM Tournament,
+        `SELECT startDate
+        FROM Tournament
         WHERE region = '${tRegion}'
         ORDER BY startDate DESC`);
 
